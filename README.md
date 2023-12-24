@@ -1,3 +1,4 @@
+# This repo is only for testing Azure depoloyment functionality on simple example Application. 
 # Spring Blog
 
 This is a sample blog application that I created to use as an example of how to take a Spring Boot application to production. 
