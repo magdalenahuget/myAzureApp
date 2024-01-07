@@ -42,8 +42,9 @@ jobs:
         with:
           inlineScript: |
             az spring app deploy \
+            --app spring-blog-app2\
             --resource-group blogger\
             --service spring-blog2\
-            --name spring-blog-app2 \
+            --name app2-deployment \
             --artifact-path ${{ env.ASC_PACKAGE_PATH }}/**/*.jar \
             --runtime-version Java_17 \
