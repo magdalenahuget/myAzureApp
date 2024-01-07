@@ -1,0 +1,50 @@
+#name: AzureSpringCloud
+#on: push
+#env:
+#  ASC_PACKAGE_PATH: ${{ github.workspace }}
+#  JAVA_VERSION: 17
+#  AZURE_SUBSCRIPTION: 431e63db-3a8f-469e-ba38-ce7d8b6564a7
+#
+#jobs:
+#  deploy_to_production:
+#    runs-on: ubuntu-latest
+#    name: deploy to production with artifact
+#    steps:
+#      - name: Checkout Github Action
+#        uses: actions/checkout@v2
+#
+#      - name: Set up JDK ${{ env.JAVA_VERSION }}
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: ${{ env.JAVA_VERSION }}
+#
+#      - name: maven build, clean
+#        run: |
+#          mvn clean package -DskipTests
+#
+#      - name: Login via Azure CLI
+#        uses: azure/login@v1
+#        with:
+#          creds: ${{ secrets.AZURE_CREDENTIALS }}
+#
+##      - name: deploy to production with artifact
+##        uses: azure/spring-apps-deploy@v1
+##        with:
+##          azure-subscription: ${{ env.AZURE_SUBSCRIPTION }}
+##          action: Deploy
+##          service-name: spring-blog2
+##          app-name: spring-blog-app2
+##          use-staging-deployment: false
+##          package: ${{ env.ASC_PACKAGE_PATH }}/**/*.jar
+#
+#      - name: Azure CLI Action to deploy to dev with main branch
+#        uses: Azure/cli@v1.0.7
+#        with:
+#          inlineScript: |
+#            az spring app deploy \
+#            --app spring-blog-app2 \
+#            --resource-group blogger \
+#            --service spring-blog2 \
+#            --name app2-deployment \
+#            --artifact-path ${{ env.ASC_PACKAGE_PATH }}/**/*.jar \
+#            --runtime-version Java_17 \
