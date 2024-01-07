@@ -45,5 +45,5 @@ jobs:
             --resource-group blogger\
             --service spring-blog2\
             --name spring-blog-app2 \
-            --artifact-path ${{ env.ASC_PACKAGE_PATH }}/backend/**/*.jar \
+            --artifact-path ${{ env.ASC_PACKAGE_PATH }}/**/*.jar \
             --runtime-version Java_17 \
