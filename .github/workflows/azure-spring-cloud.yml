@@ -33,6 +33,6 @@ jobs:
           azure-subscription: ${{ env.AZURE_SUBSCRIPTION }}
           action: Deploy
           service-name: spring-blog2
-          app-name: hellospring-blog2
+          app-name: spring-blog-app2
           use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}/**/*.jar
